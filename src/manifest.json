@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Weather Extension",
-  "version": "1.1",
+  "version": "1.0.0",
   "description": "Shows current weather, 7-day forecast, and allows managing favorites. Supports 24 languages.",
   "action": {
     "default_popup": "popup.html",

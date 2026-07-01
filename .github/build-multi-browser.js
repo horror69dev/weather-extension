@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const srcDir = path.join(__dirname, "src");
-const releaseDir = path.join(__dirname, "release");
+const srcDir = path.join(__dirname, "..", "src");
+const releaseDir = path.join(__dirname, "..", "release");
 
 const CHROMIUM_BROWSERS = ["chrome", "edge", "opera", "brave"];
 const SAFARI_BROWSER = "safari";
@@ -13,8 +13,8 @@ const VALID_TARGETS = ["chromium", "firefox", "safari", "all"];
 function parseTarget(arg) {
   const target = (arg || "all").toLowerCase();
   if (!VALID_TARGETS.includes(target)) {
-    console.error(`❌ Unknown target: ${arg}`);
-    console.error(`   Valid targets: ${VALID_TARGETS.join(", ")}`);
+    console.error(`Unknown target: ${arg}`);
+    console.error(`  Valid targets: ${VALID_TARGETS.join(", ")}`);
     process.exit(1);
   }
   if (target === "all") return [...CHROMIUM_BROWSERS, FIREFOX_BROWSER, SAFARI_BROWSER];
@@ -25,7 +25,7 @@ function parseTarget(arg) {
 
 async function buildIcons(iconsSrc, iconsDest) {
   if (!fs.existsSync(iconsSrc)) {
-    console.warn("⚠️  Icons directory not found:", iconsSrc);
+    console.warn("Icons directory not found:", iconsSrc);
     return;
   }
 
@@ -36,7 +36,7 @@ async function buildIcons(iconsSrc, iconsDest) {
   try {
     sharp = require("sharp");
   } catch {
-    console.warn("⚠️  sharp not installed - skipping PNG generation");
+    console.warn("sharp not installed - skipping PNG generation");
   }
 
   for (const svg of svgFiles) {
@@ -44,7 +44,7 @@ async function buildIcons(iconsSrc, iconsDest) {
     const baseName = path.basename(svg, ".svg");
 
     fs.copyFileSync(svgPath, path.join(iconsDest, svg));
-    console.log(`  ✓ Copied: ${svg}`);
+    console.log(`  Copied: ${svg}`);
 
     if (sharp) {
       const svgBuffer = fs.readFileSync(svgPath);
@@ -52,9 +52,9 @@ async function buildIcons(iconsSrc, iconsDest) {
         try {
           const pngBuffer = await sharp(svgBuffer).resize(size, size).png().toBuffer();
           fs.writeFileSync(path.join(iconsDest, `${baseName}-${size}.png`), pngBuffer);
-          console.log(`  ✓ Generated: ${baseName}-${size}.png`);
+          console.log(`  Generated: ${baseName}-${size}.png`);
         } catch (e) {
-          console.warn(`  ⚠️  Failed to generate PNG: ${baseName}-${size}.png`, e.message);
+          console.warn(`  Failed to generate PNG: ${baseName}-${size}.png`, e.message);
         }
       }
     }
@@ -63,7 +63,7 @@ async function buildIcons(iconsSrc, iconsDest) {
 
 async function buildLocales(localesSrc, localesDest) {
   if (!fs.existsSync(localesSrc)) {
-    console.warn("⚠️  Locales directory not found:", localesSrc);
+    console.warn("Locales directory not found:", localesSrc);
     return;
   }
 
@@ -72,13 +72,13 @@ async function buildLocales(localesSrc, localesDest) {
 
   for (const file of localeFiles) {
     fs.copyFileSync(path.join(localesSrc, file), path.join(localesDest, file));
-    console.log(`  ✓ Copied locale: ${file}`);
+    console.log(`  Copied locale: ${file}`);
   }
 }
 
 async function buildForBrowser(browser, baseDir) {
   const buildDir = path.join(baseDir, browser);
-  console.log(`\n📦 Building for ${browser.toUpperCase()}...`);
+  console.log(`\nBuilding for ${browser.toUpperCase()}...`);
 
   if (fs.existsSync(buildDir)) {
     fs.rmSync(buildDir, { recursive: true });
@@ -90,7 +90,7 @@ async function buildForBrowser(browser, baseDir) {
     const srcFile = path.join(srcDir, file);
     if (fs.existsSync(srcFile)) {
       fs.copyFileSync(srcFile, path.join(buildDir, file));
-      console.log(`  ✓ Copied: ${file}`);
+      console.log(`  Copied: ${file}`);
     }
   }
 
@@ -104,7 +104,7 @@ async function buildForBrowser(browser, baseDir) {
     path.join(buildDir, "manifest.json"),
     JSON.stringify(manifest, null, 2)
   );
-  console.log(`  ✓ Generated manifest for ${browser}`);
+  console.log(`  Generated manifest for ${browser}`);
 }
 
 function generateManifest(base, browser) {
@@ -212,9 +212,9 @@ async function build() {
     path.join(releaseDir, "build-manifest.json"),
     JSON.stringify(buildManifest, null, 2)
   );
-  console.log(`\n✅ Wrote build-manifest.json`);
+  console.log(`Wrote build-manifest.json`);
 
-  console.log("\n✅ All builds completed!");
+  console.log("\nAll builds completed!");
   console.log("\nBuild directories:");
   for (const browser of browsers) {
     console.log(`  - ${browser}: ${path.join(releaseDir, browser)}`);
@@ -226,6 +226,6 @@ async function build() {
 }
 
 build().catch(err => {
-  console.error("❌ Build failed:", err);
+  console.error("Build failed:", err);
   process.exit(1);
 });
