@@ -180,7 +180,7 @@ jobs:
 
     steps:
       - name: Download source artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: source-${{ needs.prepare.outputs.version }}
           path: release/
@@ -221,7 +221,7 @@ jobs:
 
     steps:
       - name: Download source artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: source-${{ needs.prepare.outputs.version }}
           path: release/
@@ -260,7 +260,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download source artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: source-${{ needs.prepare.outputs.version }}
           path: release/
@@ -296,28 +296,28 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Download source artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: source-${{ needs.prepare.outputs.version }}
           path: .
 
       - name: Download Chromium artifact
         if: ${{ needs.prepare.outputs.has_chromium == 'true' && needs.package-chromium.result == 'success' }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: release-chromium-${{ needs.prepare.outputs.version }}
           path: release/
 
       - name: Download Firefox artifact
         if: ${{ needs.prepare.outputs.has_firefox == 'true' && needs.package-firefox.result == 'success' }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: release-firefox-${{ needs.prepare.outputs.version }}
           path: release/
 
       - name: Download Safari artifact
         if: ${{ needs.prepare.outputs.has_safari == 'true' && needs.package-safari.result == 'success' }}
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: release-safari-${{ needs.prepare.outputs.version }}
           path: .
