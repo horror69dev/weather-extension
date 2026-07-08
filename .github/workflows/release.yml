@@ -166,7 +166,7 @@ jobs:
           echo "changed=${CHANGED}" >> $GITHUB_OUTPUT
 
       - name: Upload source artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: source-${{ steps.setup_version.outputs.version }}
           path: release/
@@ -207,7 +207,7 @@ jobs:
           echo "Chromium package size: $(stat --format=%s "release/weather-extension-chromium-v${{ needs.prepare.outputs.version }}.zip") bytes"
 
       - name: Upload Chromium artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: release-chromium-${{ needs.prepare.outputs.version }}
           path: release/weather-extension-chromium-v${{ needs.prepare.outputs.version }}.zip
@@ -243,7 +243,7 @@ jobs:
           echo "Firefox package size: $(stat --format=%s "release/weather-extension-firefox-v${{ needs.prepare.outputs.version }}.xpi") bytes"
 
       - name: Upload Firefox artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: release-firefox-${{ needs.prepare.outputs.version }}
           path: release/weather-extension-firefox-v${{ needs.prepare.outputs.version }}.xpi
@@ -275,7 +275,7 @@ jobs:
           echo "Created: weather-extension-safari-v${{ needs.prepare.outputs.version }}.zip"
 
       - name: Upload Safari artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: release-safari-${{ needs.prepare.outputs.version }}
           path: release/weather-extension-safari-v${{ needs.prepare.outputs.version }}.zip
