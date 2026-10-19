@@ -1,17 +1,17 @@
 <p align="center">
-   <img src="https://raw.githubusercontent.com/6jt8/weather-extension/main/.github/assets/banner.svg" alt="Weather Extension Banner" />
+   <img src="https://raw.githubusercontent.com/horror69dev/weather-extension/main/.github/assets/banner.svg" alt="Weather Extension Banner" />
 </p>
 
 <div align="center">
 
 **Browser extension for current weather and 7-day forecast — Chrome, Firefox, Edge, Opera, Brave & Safari**
 
-[![Release](https://img.shields.io/github/v/release/6jt8/weather-extension?style=flat-square&color=4a90b8)](https://github.com/6jt8/weather-extension/releases)
+[![Release](https://img.shields.io/github/v/release/horror69dev/weather-extension?style=flat-square&color=4a90b8)](https://github.com/horror69dev/weather-extension/releases)
 [![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 [![Languages](https://img.shields.io/badge/languages-24-blue?style=flat-square)](src/locales/)
-[![Stars](https://img.shields.io/github/stars/6jt8/weather-extension?style=flat-square&color=fbbf24)](https://github.com/6jt8/weather-extension/stargazers)
+[![Stars](https://img.shields.io/github/stars/horror69dev/weather-extension?style=flat-square&color=fbbf24)](https://github.com/horror69dev/weather-extension/stargazers)
 
-*A project by [horror69dev](https://github.com/horror69dev) & [6jt8](https://github.com/6jt8)*
+*A project by [horror69dev](https://github.com/horror69dev)*
 
 </div>
 
@@ -27,9 +27,9 @@
 ## Screenshots
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/6jt8/weather-extension/main/.github/assets/Screenshot-Weather.png" alt="Weather Tab" width="32%" />
-  <img src="https://raw.githubusercontent.com/6jt8/weather-extension/main/.github/assets/Screenshot-Forecast.png" alt="Forecast Tab" width="32%" />
-  <img src="https://raw.githubusercontent.com/6jt8/weather-extension/main/.github/assets/Screenshot-Favorites.png" alt="Favorites Tab" width="32%" />
+  <img src="https://raw.githubusercontent.com/horror69dev/weather-extension/main/.github/assets/Screenshot-Weather.png" alt="Weather Tab" width="32%" />
+  <img src="https://raw.githubusercontent.com/horror69dev/weather-extension/main/.github/assets/Screenshot-Forecast.png" alt="Forecast Tab" width="32%" />
+  <img src="https://raw.githubusercontent.com/horror69dev/weather-extension/main/.github/assets/Screenshot-Favorites.png" alt="Favorites Tab" width="32%" />
 </p>
 
 ## Package Structure
@@ -92,7 +92,7 @@ This release provides **three packages** for all supported browsers:
 ## Development
 
 ```bash
-git clone https://github.com/6jt8/weather-extension.git
+git clone https://github.com/horror69dev/weather-extension.git
 cd weather-extension
 ```
 
@@ -159,19 +159,19 @@ Uses [Open-Meteo](https://open-meteo.com/) (free, no API key required)
 Thanks to all contributors who have helped this project:
 
 <p align="center">
-  <a href="https://github.com/6jt8/weather-extension/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=6jt8/weather-extension" alt="Contributors" />
+  <a href="https://github.com/horror69dev/weather-extension/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=horror69dev/weather-extension" alt="Contributors" />
   </a>
 </p>
 
 ## Star History
 
 <p align="center">
-  <a href="https://www.star-history.com/?repos=6jt8%2Fweather-extension&type=date&legend=top-left">
+  <a href="https://www.star-history.com/?repos=horror69dev%2Fweather-extension&type=date&legend=top-left">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=6jt8%2Fweather-extension&type=date&theme=dark&legend=top-left" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=6jt8%2Fweather-extension&type=date&legend=top-left" />
-      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=6jt8%2Fweather-extension&type=date&legend=top-left" />
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=horror69dev%2Fweather-extension&type=date&theme=dark&legend=top-left" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=horror69dev%2Fweather-extension&type=date&legend=top-left" />
+      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=horror69dev%2Fweather-extension&type=date&legend=top-left" />
     </picture>
   </a>
 </p>
@@ -183,6 +183,5 @@ This project is licensed under the `MIT License` - see the [LICENSE](LICENSE) fi
 ## Copyright
 
 Originally created by [horror69dev](https://github.com/horror69dev).
-Refactored, upgraded, maintained and artwork by [6jt8](https://github.com/6jt8).
 
 Weather data provided by [Open-Meteo](https://open-meteo.com/).
